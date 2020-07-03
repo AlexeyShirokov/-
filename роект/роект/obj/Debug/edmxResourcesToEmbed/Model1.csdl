@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdvertisementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Advertisement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNewspapers" Type="Int32" />
+    <Property Name="IdOrginization" Type="Int32" />
+    <Property Name="NamberOfNs" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="QuantityOfAt" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Newspapers" Relationship="Self.FK_Advertisement_Advertisement" FromRole="Advertisement" ToRole="Newspapers" />
+    <NavigationProperty Name="Organizations" Relationship="Self.FK_Advertisement_Organizations" FromRole="Advertisement" ToRole="Organizations" />
+  </EntityType>
+  <EntityType Name="Newspapers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Prise" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Advertisement" Relationship="Self.FK_Advertisement_Advertisement" FromRole="Newspapers" ToRole="Advertisement" />
+  </EntityType>
+  <EntityType Name="Organizations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Advertisement" Relationship="Self.FK_Advertisement_Organizations" FromRole="Organizations" ToRole="Advertisement" />
+  </EntityType>
+  <Association Name="FK_Advertisement_Advertisement">
+    <End Role="Newspapers" Type="Self.Newspapers" Multiplicity="0..1" />
+    <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Newspapers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="IdNewspapers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Advertisement_Organizations">
+    <End Role="Organizations" Type="Self.Organizations" Multiplicity="0..1" />
+    <End Role="Advertisement" Type="Self.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organizations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="IdOrginization" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AdvertisementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Advertisement" EntityType="Self.Advertisement" />
+    <EntitySet Name="Newspapers" EntityType="Self.Newspapers" />
+    <EntitySet Name="Organizations" EntityType="Self.Organizations" />
+    <AssociationSet Name="FK_Advertisement_Advertisement" Association="Self.FK_Advertisement_Advertisement">
+      <End Role="Newspapers" EntitySet="Newspapers" />
+      <End Role="Advertisement" EntitySet="Advertisement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Advertisement_Organizations" Association="Self.FK_Advertisement_Organizations">
+      <End Role="Organizations" EntitySet="Organizations" />
+      <End Role="Advertisement" EntitySet="Advertisement" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

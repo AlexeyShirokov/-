@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище AdvertisementModelContainer" CdmEntityContainer="AdvertisementEntities">
+    <EntitySetMapping Name="Advertisement">
+      <EntityTypeMapping TypeName="AdvertisementModel.Advertisement">
+        <MappingFragment StoreEntitySet="Advertisement">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdNewspapers" ColumnName="IdNewspapers" />
+          <ScalarProperty Name="IdOrginization" ColumnName="IdOrginization" />
+          <ScalarProperty Name="NamberOfNs" ColumnName="NamberOfNs" />
+          <ScalarProperty Name="QuantityOfAt" ColumnName="QuantityOfAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Newspapers">
+      <EntityTypeMapping TypeName="AdvertisementModel.Newspapers">
+        <MappingFragment StoreEntitySet="Newspapers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Prise" ColumnName="Prise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizations">
+      <EntityTypeMapping TypeName="AdvertisementModel.Organizations">
+        <MappingFragment StoreEntitySet="Organizations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
