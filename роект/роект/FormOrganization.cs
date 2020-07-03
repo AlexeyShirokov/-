@@ -26,9 +26,9 @@ namespace роект
                 ListViewItem item = new ListViewItem(new string[]
                     {
                       organizations.Id.ToString(),
-                      organizations.Mail = textBoxEmail.Text,
-                      organizations.Address = textBoxAdress.Text,
-                      organizations.Name = textBoxName.Text
+                      organizations.Mail,
+                      organizations.Address,
+                      organizations.Name  
                     });
                 item.Tag = organizations;
                 listViewOrg.Items.Add(item);

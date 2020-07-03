@@ -17,6 +17,7 @@ namespace роект
             InitializeComponent();
             ShoWcomboBoxOrg();
             ShowAdvvv();
+            ShowcomboBoxNewss();
         }
         void ShoWcomboBoxOrg()
         { 
@@ -28,14 +29,14 @@ namespace роект
             }
         }
 
-       void ShowcomboBoxNewss()
+        void ShowcomboBoxNewss()
         {
-            /// не может найти newspepars!!!!!
-           /* string[] item = { newspapers.Id.ToString()+ ". " + newspapers.Name};
-            comboBoxNewss.Items.Add(string.Join(" ", item));*/
-            
+            foreach (Newspapers newspapers in Program.ads.Newspapers)
+            {
+                string[] item = { newspapers.Id.ToString() + ". " + newspapers.Name };
+                comboBoxNewss.Items.Add(string.Join(" ", item));
+            }
         }
-
         private void buttonDel_Click(object sender, EventArgs e)
         {
             try
@@ -90,6 +91,7 @@ namespace роект
             {
                 ListViewItem item = new ListViewItem(new string[]
                     {
+                        advertisement.Id.ToString(),
                        advertisement.IdNewspapers.ToString(),
                        advertisement.Newspapers.Name+" "+advertisement.Newspapers.Prise,
                        advertisement.IdOrginization.ToString(),
@@ -100,6 +102,14 @@ namespace роект
                     }) ;
                 item.Tag = advertisement;
                 listViewAdvvv.Items.Add(item);
+            }
+        }
+        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            char sym = e.KeyChar;
+            if (!Char.IsDigit(sym) && sym != 8 || sym == 127)
+            {
+                e.Handled = true;
             }
         }
     }

@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonOpenAdvertisement = new System.Windows.Forms.Button();
             this.buttonOpenNewspapers = new System.Windows.Forms.Button();
             this.buttonOpenOrganizations = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonOpenAdvertisement
             // 
-            this.buttonOpenAdvertisement.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonOpenAdvertisement.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonOpenAdvertisement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpenAdvertisement.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenAdvertisement.Location = new System.Drawing.Point(11, 131);
+            this.buttonOpenAdvertisement.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonOpenAdvertisement.Location = new System.Drawing.Point(67, 331);
             this.buttonOpenAdvertisement.Margin = new System.Windows.Forms.Padding(15);
             this.buttonOpenAdvertisement.Name = "buttonOpenAdvertisement";
             this.buttonOpenAdvertisement.Size = new System.Drawing.Size(250, 50);
@@ -49,10 +53,11 @@
             // 
             // buttonOpenNewspapers
             // 
-            this.buttonOpenNewspapers.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonOpenNewspapers.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonOpenNewspapers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpenNewspapers.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenNewspapers.Location = new System.Drawing.Point(11, 72);
+            this.buttonOpenNewspapers.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonOpenNewspapers.Location = new System.Drawing.Point(67, 272);
             this.buttonOpenNewspapers.Margin = new System.Windows.Forms.Padding(15);
             this.buttonOpenNewspapers.Name = "buttonOpenNewspapers";
             this.buttonOpenNewspapers.Size = new System.Drawing.Size(250, 50);
@@ -63,10 +68,11 @@
             // 
             // buttonOpenOrganizations
             // 
-            this.buttonOpenOrganizations.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonOpenOrganizations.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonOpenOrganizations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpenOrganizations.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpenOrganizations.Location = new System.Drawing.Point(11, 12);
+            this.buttonOpenOrganizations.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonOpenOrganizations.Location = new System.Drawing.Point(67, 212);
             this.buttonOpenOrganizations.Margin = new System.Windows.Forms.Padding(15);
             this.buttonOpenOrganizations.Name = "buttonOpenOrganizations";
             this.buttonOpenOrganizations.Size = new System.Drawing.Size(250, 50);
@@ -75,16 +81,29 @@
             this.buttonOpenOrganizations.UseVisualStyleBackColor = false;
             this.buttonOpenOrganizations.Click += new System.EventHandler(this.buttonOpenOrganizations_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(374, 187);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 192);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(398, 442);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonOpenAdvertisement);
             this.Controls.Add(this.buttonOpenNewspapers);
             this.Controls.Add(this.buttonOpenOrganizations);
             this.Name = "Form1";
             this.Text = "Menu";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,6 +113,7 @@
         private System.Windows.Forms.Button buttonOpenAdvertisement;
         private System.Windows.Forms.Button buttonOpenNewspapers;
         private System.Windows.Forms.Button buttonOpenOrganizations;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

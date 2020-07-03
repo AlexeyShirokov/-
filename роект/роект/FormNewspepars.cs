@@ -17,6 +17,14 @@ namespace роект
             InitializeComponent();
             ShowNewspepar();
         }
+        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            char sym = e.KeyChar;
+            if (!Char.IsDigit(sym) && sym != 8 || sym == 127)
+            {
+                e.Handled = true;
+            }
+        }
         void ShowNewspepar()
         {
             listViewOrg.Items.Clear();
@@ -25,9 +33,9 @@ namespace роект
                 ListViewItem item = new ListViewItem(new string[]
                     {
                       newspapers.Id.ToString(),
-                      newspapers.Mail = textBoxEmail.Text,
-                      newspapers.Prise = textBoxPrise.Text,
-                      newspapers.Name = textBoxName.Text
+                      newspapers.Mail,
+                      newspapers.Prise,
+                      newspapers.Name
                     }) ;
                 item.Tag = newspapers;
                 listViewOrg.Items.Add(item);

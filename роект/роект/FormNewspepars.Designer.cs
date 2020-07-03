@@ -143,6 +143,7 @@
             this.textBoxPrise.Name = "textBoxPrise";
             this.textBoxPrise.Size = new System.Drawing.Size(100, 23);
             this.textBoxPrise.TabIndex = 48;
+            this.textBoxPrise.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // textBoxName
             // 

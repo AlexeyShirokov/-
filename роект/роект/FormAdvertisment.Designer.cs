@@ -101,6 +101,7 @@
             this.textBoxQvoliti.Name = "textBoxQvoliti";
             this.textBoxQvoliti.Size = new System.Drawing.Size(100, 23);
             this.textBoxQvoliti.TabIndex = 51;
+            this.textBoxQvoliti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // textBoxNamber
             // 
@@ -109,6 +110,7 @@
             this.textBoxNamber.Name = "textBoxNamber";
             this.textBoxNamber.Size = new System.Drawing.Size(100, 23);
             this.textBoxNamber.TabIndex = 50;
+            this.textBoxNamber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // labelQvoliti
             // 
@@ -211,7 +213,6 @@
             this.comboBoxNewss.Name = "comboBoxNewss";
             this.comboBoxNewss.Size = new System.Drawing.Size(121, 23);
             this.comboBoxNewss.TabIndex = 44;
-    
             // 
             // comboBoxOrg
             // 
@@ -221,7 +222,6 @@
             this.comboBoxOrg.Name = "comboBoxOrg";
             this.comboBoxOrg.Size = new System.Drawing.Size(121, 23);
             this.comboBoxOrg.TabIndex = 43;
-
             // 
             // pictureBox1
             // 
